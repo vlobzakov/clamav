@@ -33,20 +33,22 @@ onUninstall:
 buttons:
   - confirmText: Do you want to run a Scan of the full Node?
     loadingText: Scanning...
-    action: Scan
+    action: scan
     caption: Scan Now
 
   - confirmText: Do you want to run a Update of the Clamav DB?
     loadingText: Updating
-    action: Update
+    action: update
     caption: Update DB
 
 actions:
-  Scan:
-    jps: ${baseUrl}/scan.jps
+  scan:
+    install:
+      jps: scan.jps
   
-  Update:
-    jps: ${baseUrl}/update-db.jps
+  update:
+    install:
+      jps: update-db.jps
 
 success:
   text:  success.md
