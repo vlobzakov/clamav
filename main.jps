@@ -19,10 +19,10 @@ targetNodes:
 
 onInstall:
   cmd [*]:
-  - yum install -y epel-release
-  - yum install -y clamav
-  user: root
-  sayYes: true
+    - yum install -y epel-release
+    - yum install -y clamav
+    user: root
+    sayYes: true
 
 onUninstall:
   cmd [*]:
@@ -32,7 +32,6 @@ onUninstall:
     sayYes: true
 
 actions:
-
   Scan:
     jps: scan.jps
 
