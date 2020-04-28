@@ -1,0 +1,29 @@
+type: update
+name: Anti-virus
+baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
+description: 
+  text:   
+    <brVirus Scan protection with Clamav</br>
+short: Virus Scan protection with Clamav
+    
+logo: clamav-logo.png
+globals:
+  env: ${env.name}
+onBeforeInit: scripts/settings.js
+     
+targetNodes:
+  nodeGroup:
+    - bl 
+    - cp
+    - storage
+
+onInstall:
+  
+
+install-clamav:
+
+
+
+success:
+  text:  success/${globals.SUCCESS}.md
+  mail:  success/${globals.SUCCESS}.md
