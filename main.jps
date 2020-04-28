@@ -24,6 +24,18 @@ onInstall:
   user: root
   sayYes: true
 
+onUninstall:
+  cmd [*]:
+    - yum remove -y clamav
+    - yum remove -y epel-release
+    user: root
+    sayYes: true
+
+actions:
+
+  Scan:
+    jps: scan.jps
+
 success:
   text:  success/${globals.SUCCESS}.md
   mail:  success/${globals.SUCCESS}.md
