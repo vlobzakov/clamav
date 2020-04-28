@@ -1,10 +1,9 @@
 type: update
 name: Anti-virus
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
-version: 0.1
+version: 0.1.1
 description: 
-  text:   
-    <br>Virus Scan protection with Clamav</br>
+  text: Virus Scan protection with Clamav
 short: Virus Scan protection with Clamav
     
 logo: clamav-logo.png
@@ -37,9 +36,16 @@ buttons:
     action: Scan
     caption: Scan Now
 
+  - confirmText: Do you want to run a Update of the Clamav DB?
+    loadingText: Updating
+    action: Update
+    caption: Update DB
+
 actions:
   Scan:
     jps: scan.jps
+  Update:
+    jps: update-db.jps
 
 success:
   text:  success.md

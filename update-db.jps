@@ -5,13 +5,13 @@ version: 0.1
 logo: clamav-logo.png
 
 onInstall:
+  - set:
+    result: a
   cmd [*]:
-    - 
-    - yum install -y epel-release
-    - yum install -y clamav
+    - freshclam > ${this.result}
   user: root
   sayYes: true
 
 success:
-  text:  scanned.md
-  mail:  scanned.md
+  text:  Clamav Database has been updated ${this.result} test
+
