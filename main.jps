@@ -17,7 +17,7 @@ targetNodes:
     - storage
 
 onInstall:
-  - set:
+  set:
     a: a
     b: b
   cmd [*]:

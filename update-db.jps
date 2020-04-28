@@ -5,7 +5,7 @@ version: 0.1
 logo: clamav-logo.png
 
 onInstall:
-  - set:
+  set:
     result: a
   cmd [*]:
     - freshclam > ${this.result}
