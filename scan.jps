@@ -6,8 +6,7 @@ logo: clamav-logo.png
 
 onInstall:
   cmd [*]:
-    - yum install -y epel-release
-    - yum install -y clamav
+    - clamscan --infected --remove --recursive
   user: root
   sayYes: true
 
