@@ -17,20 +17,17 @@ targetNodes:
     - storage
 
 onInstall:
-  set:
-    a: a
-    b: b
   cmd [*]:
-    - yum install -y epel-release > ${this.a}
-    - yum install -y clamav > ${this.b}
+    - yum install -y epel-release 
+    - yum install -y clamav 
   user: root
   sayYes: true
 
 onUninstall:
   cmd [*]:
     - yum remove -y clamav
-  user: root
     - yum remove -y epel-release 
+  user: root
   sayYes: true
 
 buttons:
@@ -52,4 +49,4 @@ actions:
     jps: update-db.jps
 
 success:
-  text:  ${this.a} success.md
+  text:  success.md

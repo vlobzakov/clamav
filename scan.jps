@@ -6,7 +6,6 @@ logo: clamav-logo.png
 
 onInstall:
   cmd [*]:
-    - 
     - yum install -y epel-release
     - yum install -y clamav
   user: root
@@ -14,4 +13,3 @@ onInstall:
 
 success:
   text:  scanned.md
-  mail:  scanned.md

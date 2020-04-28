@@ -5,13 +5,11 @@ version: 0.1
 logo: clamav-logo.png
 
 onInstall:
-  set:
-    result: a
   cmd [*]:
-    - freshclam > ${this.result}
+    - freshclam
   user: root
   sayYes: true
 
 success:
-  text:  Clamav Database has been updated ${this.result} test
+  text:  Clamav Database has been updated
 
