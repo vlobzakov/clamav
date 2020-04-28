@@ -43,10 +43,10 @@ buttons:
 
 actions:
   Scan:
-    jps: scan.jps
+    jps: ${baseUrl}/scan.jps
   
   Update:
-    jps: update-db.jps
+    jps: ${baseUrl}/update-db.jps
 
 success:
   text:  success.md
