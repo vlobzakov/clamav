@@ -1,6 +1,7 @@
 type: update
 name: Anti-virus
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
+version: 0.1
 description: 
   text:   
     <br>Virus Scan protection with Clamav</br>
@@ -17,12 +18,11 @@ targetNodes:
     - storage
 
 onInstall:
-  cmd [cp, bl, storage]:
-  - sudo yum install -y epel-release
-  - sudo yum install -y clamav
-
-sayYes: true
-user: root
+  cmd [*]:
+  - yum install -y epel-release
+  - yum install -y clamav
+  user: root
+  sayYes: true
 
 success:
   text:  success/${globals.SUCCESS}.md
