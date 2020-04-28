@@ -9,7 +9,6 @@ short: Virus Scan protection with Clamav
 logo: clamav-logo.png
 globals:
   env: ${env.name}
-onBeforeInit: scripts/settings.js
      
 targetNodes:
   nodeGroup:
@@ -18,11 +17,12 @@ targetNodes:
     - storage
 
 onInstall:
-  
+  cmd [cp, bl, storage]:
+  - yum install -y epel-release
+  - yum install -y clamav
 
-install-clamav:
-
-
+sayYes: true
+user: root
 
 success:
   text:  success/${globals.SUCCESS}.md
