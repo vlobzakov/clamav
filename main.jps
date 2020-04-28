@@ -31,10 +31,16 @@ onUninstall:
   user: root
   sayYes: true
 
+buttons:
+  - confirmText: Do you want to run a Scan of the full Node?
+    loadingText: Scanning...
+    action: Scan
+    caption: Scan Now
+
 actions:
   Scan:
     jps: scan.jps
 
 success:
-  text:  success/${globals.SUCCESS}.md
-  mail:  success/${globals.SUCCESS}.md
+  text:  success.md
+  mail:  success.md
