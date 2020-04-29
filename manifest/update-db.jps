@@ -11,6 +11,6 @@ onInstall:
   sayYes: true
   
 - return:
-      type: info
+      type: success
       message: ${response.out}
 

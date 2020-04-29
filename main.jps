@@ -44,11 +44,11 @@ buttons:
 actions:
   scan:
     install:
-      jps: scan.jps
+      jps: manifest/scan.jps
   
   update:
     install:
-      jps: update-db.jps
+      jps: manifest/update-db.jps
 
 success:
   text:  success.md
