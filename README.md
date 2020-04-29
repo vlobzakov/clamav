@@ -10,7 +10,10 @@ There is *NO* continous scanning!
 
 The node will only be scanned once you click on scan now and the addon does nothing until then.
 
-The scan command is  `clamscan --infected --recursive --remove --exclude-dir="^/sys" / `
+The scan command is  
+```
+clamscan --infected --recursive --remove --exclude-dir="^/sys" / 
+```
 
 It will remove all infected Files even if false positive.
 
@@ -21,7 +24,9 @@ The Node will be severely loaded during the Scan!
 # Installation
 
 You can directly import this link by JPS import:
-`https://raw.githubusercontent.com/panslothda/Jelastic-Addon-Clamav-Antivirus/master/main.jps`
+```
+https://raw.githubusercontent.com/panslothda/Jelastic-Addon-Clamav-Antivirus/master/main.jps
+```
 
 Or you can copy paste the main.jps into the Import tab.
 
