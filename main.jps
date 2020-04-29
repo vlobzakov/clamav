@@ -6,7 +6,7 @@ description:
   text: Virus Scan protection with Clamav
 short: Virus Scan protection with Clamav
     
-logo: clamav-logo.png
+logo: images/clamav-logo.png
 
 targetNodes:
   nodeGroup: '*'
