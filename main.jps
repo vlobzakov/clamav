@@ -9,16 +9,8 @@ short: Virus Scan protection with Clamav
 logo: clamav-logo.png
 
 targetNodes:
-  nodeGroup:
-    - bl
-    - cp
-    - sqldb
-    - nosqldb
-    - vps
-    - cache
-    - build
-    - proxysql
-    - storage
+  nodeGroup: '*'
+
      
 onInstall:
   cmd [*]:
