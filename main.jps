@@ -49,3 +49,8 @@ actions:
   update:
     install:
       jps: manifest/update-db.jps
+
+
+return:
+  type: success
+  message: Anti-Virus succesfully installed
