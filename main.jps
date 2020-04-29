@@ -18,16 +18,13 @@ targetNodes:
 
 onInstall:
   cmd [*]:
-    - yum install -y epel-release 
-    - yum install -y clamav 
-    - sudo sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
+    - curl -fsSL ${baseUrl}/scripts/detect-os-and-install.sh | /bin/bash
   user: root
   sayYes: true
 
 onUninstall:
   cmd [*]:
-    - yum remove -y clamav
-    - yum remove -y epel-release 
+    - curl -fsSL ${baseUrl}/scripts/detect-os-and-uninstall.sh | /bin/bash
   user: root
   sayYes: true
 
