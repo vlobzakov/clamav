@@ -7,4 +7,7 @@ elif [ $? == *"centos"* ]; then
    	echo "centos"
 elif [ $? == *"alpine"* ]; then
    	echo "alpine"
+else
+	echo $?
+	echo $
 fi
