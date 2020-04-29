@@ -1,13 +1,11 @@
 #!/bin/bash
 
-cat /etc/*-release | grep 'ID=' &> /dev/null
-if [ $? == *"debian"* ]; then
-   echo "debian"
-elif [ $? == *"centos"* ]; then
-   	echo "centos"
-elif [ $? == *"alpine"* ]; then
-   	echo "alpine"
-else
-	echo $?
-	echo $
+detect=$(cat /etc/*-release | grep 'ID=')
+if [ $detect == *"debian"* ]; then
+echo "debian"
+elif [[ $detect == *"centos"* ]]; then
+echo "centos"
+elif [[ $detect == *"alpine"* ]]; then
+echo "alpine"
+
 fi
