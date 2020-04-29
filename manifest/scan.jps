@@ -6,7 +6,7 @@ logo: clamav-logo.png
 
 onInstall:
 - cmd [*]:
-    clamscan --infected --remove --recursive
+    clamscan --infected --recursive --exclude-dir="^/sys" /
   user: root
   sayYes: true
 
