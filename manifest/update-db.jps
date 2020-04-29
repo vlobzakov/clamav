@@ -5,10 +5,10 @@ version: 0.1
 logo: clamav-logo.png
 
 onInstall:
-	- cmd [*]:
-	    freshclam
-	  user: root
-	  sayYes: true
-	- return:
-	      type: success
-	      message: ${response.out}
+- cmd [*]:
+	freshclam
+	user: root
+	sayYes: true
+- return:
+	type: success
+	message: ${response.out}

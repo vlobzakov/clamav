@@ -5,10 +5,10 @@ version: 0.1
 logo: clamav-logo.png
 
 onInstall:
-	- cmd [*]:
-	    clamscan --infected --remove --recursive
-	  user: root
-	  sayYes: true
-	- return:
-	      type: success
-	      message: ${response.out}
+- cmd [*]:
+    clamscan --infected --remove --recursive
+    user: root
+	sayYes: true
+- return:
+    type: success
+    message: ${response.out}
