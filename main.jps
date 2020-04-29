@@ -7,8 +7,18 @@ description:
 short: Virus Scan protection with Clamav
     
 logo: clamav-logo.png
-globals:
-  env: ${env.name}
+
+nodes:
+  nodeGroup:
+    - bl
+    - cp
+    - sqldb
+    - nosqldb
+    - vps
+    - cache
+    - build
+    - proxysql
+    - storage
      
 onInstall:
   cmd [*]:
