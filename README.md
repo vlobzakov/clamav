@@ -1,12 +1,14 @@
 # Clamav Addon for Jelastic Cloud
 
+**ONLY CentOS BASED NODES ARE SUPPORTED**
+
 Currently this addon works by having 2 buttons on the interface once it's installed.
 
 ![Interface](interface.png?raw=true)
 
 One is called freshclam which runs an update of the clamav DB and one is Scan now.
 
-There is *NO* continous scanning!
+There is **NO** continous scanning!
 
 The node will only be scanned once you click on scan now and the addon does nothing until then.
 
