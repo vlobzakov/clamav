@@ -32,7 +32,7 @@ onUninstall:
   sayYes: true
 
 buttons:
-  - confirmText: Do you want to run a Scan of the full Node?\
+  - confirmText: Do you want to run a Scan of the full Node?    
                   WARNING This will be run with --remove and will remove everything detected even if False-Positive
     loadingText: Scanning...
     action: scan
