@@ -8,7 +8,7 @@ short: Virus Scan protection with Clamav
     
 logo: clamav-logo.png
 
-nodes:
+targetNodes:
   nodeGroup:
     - bl
     - cp
