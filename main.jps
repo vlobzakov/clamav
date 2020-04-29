@@ -40,6 +40,7 @@ buttons:
     loadingText: Updating
     action: update
     caption: Update DB
+    successText: Update has sucesfully run trough  -  ${response.out}
 
 actions:
   scan:
