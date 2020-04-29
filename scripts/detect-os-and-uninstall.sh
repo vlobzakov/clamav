@@ -1,7 +1,7 @@
 #!/bin/bash
 
 detect=$(cat /etc/*-release | grep 'ID=')
-if [ $detect == *"debian"* ]; then
+if [[ $detect == *"debian"* ]]; then
 	sudo apt-get remove clamav
 elif [[ $detect == *"ubuntu"* ]]; then
 	sudo apt-get remove clamav
