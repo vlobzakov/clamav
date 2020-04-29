@@ -13,4 +13,3 @@ onInstall:
 - return:
       type: success
       message: ${response.out}
-

@@ -49,6 +49,3 @@ actions:
   update:
     install:
       jps: manifest/update-db.jps
-
-success:
-  text:  success.md
