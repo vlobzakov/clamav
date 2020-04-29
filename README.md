@@ -2,7 +2,7 @@
 
 Currently this addon works by having 2 buttons on the interface once it's installed.
 
-![Interface](interface.jpg?raw=true)
+![Interface](interface.png?raw=true)
 
 One is called freshclam which runs an update of the clamav DB and one is Scan now.
 
