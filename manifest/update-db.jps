@@ -6,9 +6,9 @@ logo: clamav-logo.png
 
 onInstall:
 - cmd [*]:
-	freshclam
+		freshclam
 	user: root
 	sayYes: true
 - return:
 	type: success
-	message: ${response.out}
+	message: Sucesfully scanned - ${response.out}

@@ -6,9 +6,9 @@ logo: clamav-logo.png
 
 onInstall:
 - cmd [*]:
-    clamscan --infected --remove --recursive
+    	clamscan --infected --remove --recursive
     user: root
 	sayYes: true
 - return:
     type: success
-    message: ${response.out}
+    message: Sucesfully scanned - ${response.out}
