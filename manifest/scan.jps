@@ -13,5 +13,4 @@ onInstall:
 - return:
       type: success
       message: Sucesfully scanned - ${response.out}
-      email: Sucesfully scanned and if found removed\ 
-             - ${response.out}
+      email: Sucesfully scanned and if found removed\ - ${response.out}
