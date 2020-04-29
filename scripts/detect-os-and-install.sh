@@ -7,5 +7,4 @@ elif [[ $detect == *"centos"* ]]; then
 echo "centos"
 elif [[ $detect == *"alpine"* ]]; then
 echo "alpine"
-
 fi
