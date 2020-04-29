@@ -1,6 +1,6 @@
 # Clamav Addon for Jelastic Cloud
 
-**ONLY CentOS BASED NODES ARE SUPPORTED**
+**All Nodes that are based on either CentOS, Alpine, Ubuntu or Debian are supported**
 
 Currently this addon works by having 2 buttons on the interface once it's installed.
 
