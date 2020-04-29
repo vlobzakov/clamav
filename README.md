@@ -15,3 +15,13 @@ The scan command is  `clamscan --infected --recursive --remove --exclude-dir="^/
 It will remove all infected Files even if false positive.
 
 The Node will be severely loaded during the Scan!
+
+
+
+# Installation
+
+You can directly import this link by JPS import:
+`https://raw.githubusercontent.com/panslothda/Jelastic-Addon-Clamav-Antivirus/master/main.jps`
+
+Or you can copy paste the main.jps into the Import tab.
+
