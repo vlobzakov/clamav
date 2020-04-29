@@ -10,21 +10,15 @@ logo: clamav-logo.png
 globals:
   env: ${env.name}
      
-targetNodes:
-  nodeGroup:
-    - bl 
-    - cp
-    - storage
-
 onInstall:
   cmd [*]:
-    - curl -fsSL ${baseUrl}/scripts/detect-os-and-install.sh | /bin/bash
+    - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
   user: root
   sayYes: true
 
 onUninstall:
   cmd [*]:
-    - curl -fsSL ${baseUrl}/scripts/detect-os-and-uninstall.sh | /bin/bash
+    - curl -fsSL ${baseUrl}scripts/detect-os-and-uninstall.sh | /bin/bash
   user: root
   sayYes: true
 
