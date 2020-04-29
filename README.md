@@ -1,4 +1,4 @@
-# Initial Release
+# Clamav Addon for Jelastic Cloud
 
 Currently this addon works by having 2 buttons on the interface once it's installed.
 
