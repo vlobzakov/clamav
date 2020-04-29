@@ -11,5 +11,5 @@ onInstall:
   sayYes: true
   
 - return:
-  type: success
-  message: Database was sucesfully updated - ${response.out}
+      type: success
+      message: Update has sucesfully run trough  -  ${response.out}
