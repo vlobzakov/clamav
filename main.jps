@@ -20,6 +20,7 @@ onInstall:
   cmd [*]:
     - yum install -y epel-release 
     - yum install -y clamav 
+    - sudo sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
   user: root
   sayYes: true
 
@@ -36,10 +37,10 @@ buttons:
     action: scan
     caption: Scan Now
 
-  - confirmText: Do you want to run a Update of the Clamav DB?
+  - confirmText: Do you want to run a Update of the Clamav DB using freshclam?
     loadingText: Updating
     action: update
-    caption: Update DB
+    caption: Freshclam
 
 actions:
   scan:
