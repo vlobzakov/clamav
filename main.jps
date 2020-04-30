@@ -13,13 +13,13 @@ targetNodes:
 
      
 onInstall:
-  cmd [*]:
+  cmd [${targetNodes.nodeGroup}]:
     - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
   user: root
   sayYes: true
 
 onUninstall:
-  cmd [*]:
+  cmd [${targetNodes.nodeGroup}]:
     - curl -fsSL ${baseUrl}scripts/detect-os-and-uninstall.sh | /bin/bash
   user: root
   sayYes: true
