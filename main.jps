@@ -8,6 +8,8 @@ short: Virus Scan protection with Clamav
     
 logo: images/clamav-logo.png
 
+
+
 targetNodes:
   nodeGroup: '*'
 
@@ -17,8 +19,6 @@ onInstall:
     - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
   user: root
   sayYes: true
-  settings:
-    node: "${targetNodes.nodeGroup}"
 
 onUninstall:
   cmd [${targetNodes.nodeGroup}]:
@@ -42,10 +42,14 @@ actions:
   scan:
     install:
       jps: manifest/scan.jps
+    settings:
+      node: "${targetNodes.nodeGroup}"
   
   update:
     install:
       jps: manifest/update-db.jps
+    settings:
+      node: "${targetNodes.nodeGroup}"
 
 return:
   type: success
