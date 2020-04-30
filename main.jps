@@ -1,18 +1,19 @@
 type: update
-name: Clamav Anti-virus
-baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
+
 version: 0.2
+
+name: Clamav Anti-virus
+
+baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
+
 description: 
   text: /text/description.md
-short: Virus Scan protection with Clamav NO Automatic Scanning!
-    
+  short: Virus Scan protection with Clamav, NO Automatic Scanning!  
+
 logo: images/clamav-logo.png
-
-
 
 targetNodes:
   nodeGroup: '*'
-
      
 onInstall:
   cmd [${targetNodes.nodeGroup}]:
