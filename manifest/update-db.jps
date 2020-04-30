@@ -5,7 +5,7 @@ version: 0.1
 logo: images/clamav-logo.png
 
 onInstall:
-- cmd [${settings.nodes}]:
+- cmd [${settings.node}]:
     freshclam
   user: root
   sayYes: true
