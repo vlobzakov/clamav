@@ -3,8 +3,8 @@ name: Anti-virus
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
 version: 0.1
 description: 
-  text: Virus Scan protection with Clamav
-short: Virus Scan protection with Clamav
+  text: Virus Scan protection with Clamav - It will NOT automatically scan your nodes. Only when requested over the buttons.
+short: Virus Scan protection with Clamav NO Automatic Scanning!
     
 logo: images/clamav-logo.png
 
