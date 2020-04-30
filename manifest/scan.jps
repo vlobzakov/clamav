@@ -5,7 +5,7 @@ version: 0.1
 logo: images/clamav-logo.png
 
 onInstall:
-- cmd [${targetNodes.nodeGroup}]:
+- cmd [${settings.nodes}]:
     clamscan --infected --recursive --remove --exclude-dir="^/sys" /
   user: root
   sayYes: true
