@@ -14,7 +14,7 @@ The node will only be scanned once you click on scan now and the addon does noth
 
 The scan command is  
 ```
-clamscan --infected --recursive --remove --exclude-dir="^/sys" / 
+clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" /
 ```
 
 It will remove all infected Files even if false positive.
