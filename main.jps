@@ -39,6 +39,12 @@ buttons:
     action: update
     caption: Freshclam
 
+onAfterRedeployContainer [${targetNodes.nodeGroup}]:
+  cmd [${targetNodes.nodeGroup}]:
+    - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
+  user: root
+  sayYes: true
+
 actions:
   scan:
     install:
