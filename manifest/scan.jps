@@ -11,5 +11,5 @@ onInstall:
   sayYes: true
 
 - return:
-   type: success
+   type: info
    message: Node has been Scanned and if found, infected Files where removed. Output logged to /var/log/clamav.log
