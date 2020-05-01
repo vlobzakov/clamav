@@ -14,13 +14,14 @@ The node will only be scanned once you click on scan now and the addon does noth
 
 The scan command is  
 ```
-clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" /
+clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log /
 ```
 
 It will remove all infected Files even if false positive.
 
 The Node will be severely loaded during the Scan!
 
+Log Files are saved into the file /var/log/clamav.log
 
 
 # Installation
