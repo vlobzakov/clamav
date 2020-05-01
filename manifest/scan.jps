@@ -12,5 +12,5 @@ onInstall:
 
 - return:
       type: success
-      message: Node has been Scanned and output logged to /var/log/clamav.log
+      message: Node has been Scanned and if found, infected Files where removed. Output logged to /var/log/clamav.log
       #message: ${response.out}
