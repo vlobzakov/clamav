@@ -6,10 +6,10 @@ logo: images/clamav-logo.png
 
 onInstall:
 - cmd [${settings.node}]:
-    sudo clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log /
+    freshclam
   user: root
   sayYes: true
-
+  
 - return:
       type: success
-      message: ${response.out}
+      message: Update has sucesfully run trough  -  ${response.out}
