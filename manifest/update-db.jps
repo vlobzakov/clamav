@@ -11,5 +11,5 @@ onInstall:
   sayYes: true
   
 - return:
-  type: info
+  type: success
   message: Update has sucesfully run trough and detection database was refreshed
