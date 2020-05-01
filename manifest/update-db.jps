@@ -12,4 +12,4 @@ onInstall:
   
 - return:
       type: success
-      message: Update has sucesfully run trough and detection database was refreshed     
+      message: Update has sucesfully run trough and detection database was refreshed
