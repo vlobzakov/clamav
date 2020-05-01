@@ -34,11 +34,6 @@ buttons:
     action: scan
     caption: Scan Now
 
-  - confirmText: Do you want to run a Update of the Clamav DB using freshclam?
-    loadingText: Updating
-    action: update
-    caption: Freshclam
-
 onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   cmd [${targetNodes.nodeGroup}]:
     - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
@@ -46,12 +41,7 @@ onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   sayYes: true
 
 actions:
-  scan:
-    install:
-      jps: manifest/scan.jps
-    settings:
-      node: "${targetNodes.nodeGroup}"
-  
+
   update:
     install:
       jps: manifest/update-db.jps
