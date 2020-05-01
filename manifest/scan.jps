@@ -5,11 +5,11 @@ version: 0.1
 logo: images/clamav-logo.png
 
 onInstall:
-- cmd [${settings.node}]:
+  cmd [${settings.node}]:
     sudo clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log /
   user: root
   sayYes: true
 
-- return:
-      type: success
-      message: Node has been Scanned and if found, infected Files where removed. Output logged to /var/log/clamav.log
+ return:
+    type: success
+    message: Node has been Scanned and if found, infected Files where removed. Output logged to /var/log/clamav.log
