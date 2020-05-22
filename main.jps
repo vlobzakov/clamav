@@ -27,10 +27,6 @@ buttons:
     loadingText: Launching Scan in Background
     action: scan
     caption: Scan Now
-  - confirmText: Do you want to run a Update of the Clamav DB using freshclam?
-    loadingText: Updating...
-    action: update
-    caption: Freshclam
 
 onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   cmd [${targetNodes.nodeGroup}]:
@@ -45,29 +41,6 @@ actions:
     return:
       type: success
       message: Node will be Scanned in the Background and if any infected Files are found they will be removed. Output is beeing logged to /var/log/clamav.log
-  scan_old:
-    - install:
-        type: update
-        jps: manifest/scan.jps
-        settings:
-          node: "${targetNodes.nodeGroup}"
-    - return:  
-        type: info
-        message: ${response.successText}
-
-  update:
-    - install:
-        type: update
-        jps: manifest/update-db.jps
-        onInstall:
-          return: 
-            type: success
-            message: Update has sucesfully run trough and detection database was refreshed
-        settings:
-          node: "${targetNodes.nodeGroup}"
-    - return:  
-        type: info
-        message: ${response.successText}
 
 return:
   type: info
