@@ -28,12 +28,12 @@ onUninstall:
   sayYes: true
 
 buttons:
-  - confirmText: Do you want to run a Scan of the full Node?    
-                  WARNING This will remove everything detected even if False-Positive.
+  - confirmText: Do you want to run a Scan of the full Node?     WARNING This will remove everything detected even if False-Positive.
+    loadingText: Scanning...
     action: scan
     caption: Scan Now
   - confirmText: Do you want to run a Update of the Clamav DB using freshclam?
-    loadingText: Updating
+    loadingText: Updating...
     action: update
     caption: Freshclam
 
@@ -51,7 +51,7 @@ actions:
         onInstall:
           return: 
             type: success
-            message: message from nested JPS^1
+            message: Node has been Scanned and if found, infected Files where removed. Output logged to /var/log/clamav.log
         settings:
           node: "${targetNodes.nodeGroup}"
     - return:  
@@ -65,7 +65,7 @@ actions:
         onInstall:
           return: 
             type: success
-            message: message from nested JPS'1
+            message: Update has sucesfully run trough and detection database was refreshed
         settings:
           node: "${targetNodes.nodeGroup}"
     - return:  
