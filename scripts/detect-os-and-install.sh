@@ -19,6 +19,6 @@ elif [[ $detect == *"alpine"* ]]; then
 fi
 
 sudo freshclam
-sudo touch /var/log/clamav.log
-sudo chgrp clamupdate /var/log/clamav.log
-sudo chmod 1755 /var/log/clamav.log
+sudo touch /var/log/clamav/clamav.log
+sudo chgrp clamupdate /var/log/clamav/clamav.log
+sudo chmod 1755 /var/log/clamav/clamav.log

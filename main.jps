@@ -41,7 +41,7 @@ actions:
     user: root
     return:
       type: success
-      message: Node will be Scanned in the Background and if any infected Files are found they will be removed. Output is beeing logged to /var/log/clamav.log
+      message: Node will be Scanned in the Background and if any infected Files are found they will be removed. Output is beeing logged to /var/log/clamav/clamav.log
 
 return:
   type: info
