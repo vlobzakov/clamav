@@ -47,16 +47,31 @@ onAfterRedeployContainer [${targetNodes.nodeGroup}]:
 
 actions:
   scan:
-    install:
-      jps: manifest/scan.jps
-    settings:
-      node: "${targetNodes.nodeGroup}"
-  
+    - install:
+        type: update
+        jps: manifest/scan.jps
+        onInstall:
+          return: 
+            type: success
+            message: message from nested JPS^1
+    - settings:
+        node: "${targetNodes.nodeGroup}"
+    - return:  
+        type: info
+        message: ${response.successText}
+
   update:
-    install:
-      jps: manifest/update-db.jps
-    settings:
-      node: "${targetNodes.nodeGroup}"
+    - install:
+        jps: manifest/update-db.jps
+        onInstall:
+          return: 
+            type: success
+            message: message from nested JPS'1
+    - settings:
+        node: "${targetNodes.nodeGroup}"
+    - return:  
+        type: info
+        message: ${response.successText}
 
 return:
   type: success
