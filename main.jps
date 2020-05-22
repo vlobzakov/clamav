@@ -1,15 +1,10 @@
 type: update
-
 version: 0.3
-
 name: Clamav Anti-virus
-
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
-
 description: 
   text: /text/description.md
   short: Virus Scan protection with Clamav, NO Automatic Scanning!  
-
 logo: images/clamav-logo.png
 
 targetNodes:
@@ -45,6 +40,12 @@ onAfterRedeployContainer [${targetNodes.nodeGroup}]:
 
 actions:
   scan:
+    cmd [${targetNodes.nodeGroup}]:
+      - curl -fsSL ${baseUrl}scripts/scan.sh | /bin/bash
+    return:
+      type: success
+      message: Node will be Scanned in the Background and if any infected Files are found they will be removed. Output is beeing logged to /var/log/clamav.log
+  scan_old:
     - install:
         type: update
         jps: manifest/scan.jps
