@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo freshclam
-sudo clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log / > /dev/null 2>&1 &
+freshclam
+clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log / > /dev/null 2>&1 &
