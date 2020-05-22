@@ -29,11 +29,9 @@ onUninstall:
 
 buttons:
   - confirmText: Do you want to run a Scan of the full Node?    
-                  WARNING This will be run with --remove and will remove everything detected even if False-Positive. Additionally it will consume alot of Ressources!
-    loadingText: Scanning...
+                  WARNING This will remove everything detected even if False-Positive.
     action: scan
     caption: Scan Now
-
   - confirmText: Do you want to run a Update of the Clamav DB using freshclam?
     loadingText: Updating
     action: update
@@ -54,8 +52,8 @@ actions:
           return: 
             type: success
             message: message from nested JPS^1
-    - settings:
-        node: "${targetNodes.nodeGroup}"
+        settings:
+          node: "${targetNodes.nodeGroup}"
     - return:  
         type: info
         message: ${response.successText}
@@ -67,7 +65,7 @@ actions:
           return: 
             type: success
             message: message from nested JPS'1
-    - settings:
+      settings:
         node: "${targetNodes.nodeGroup}"
     - return:  
         type: info

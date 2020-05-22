@@ -21,3 +21,4 @@ fi
 sudo freshclam
 sudo touch /var/log/clamav.log
 sudo chgrp clamupdate /var/log/clamav.log
+sudo chmod 1755 /var/log/clamav.log
