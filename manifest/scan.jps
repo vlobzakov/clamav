@@ -6,7 +6,7 @@ logo: images/clamav-logo.png
 
 onInstall:
   cmd [${settings.node}]:
-    sudo nohup clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log /
+    sudo clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log / > /dev/null 2>&1 & 
   user: root
   sayYes: true
   return:
