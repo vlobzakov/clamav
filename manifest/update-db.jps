@@ -1,7 +1,7 @@
 type: update
 name: Update-DB
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
-version: 0.1
+version: 0.3
 logo: images/clamav-logo.png
 
 onInstall:

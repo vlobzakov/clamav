@@ -1,6 +1,6 @@
 type: update
 
-version: 0.2
+version: 0.3
 
 name: Clamav Anti-virus
 
@@ -48,10 +48,6 @@ actions:
     - install:
         type: update
         jps: manifest/scan.jps
-        onInstall:
-          return: 
-            type: success
-            message: Node has been Scanned and if found, infected Files where removed. Output logged to /var/log/clamav.log
         settings:
           node: "${targetNodes.nodeGroup}"
     - return:  

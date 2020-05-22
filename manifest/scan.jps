@@ -1,14 +1,14 @@
 type: update
 name: Scan
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
-version: 0.1
+version: 0.3
 logo: images/clamav-logo.png
 
 onInstall:
   cmd [${settings.node}]:
-    sudo clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log /
+    sudo nohup clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav.log /
   user: root
   sayYes: true
   return:
     type: info
-    message: Node has been Scanned and if found, infected Files where removed. Output logged to /var/log/clamav.log
+    message: Node will be Scanned in the Background and if any infected Files are found they will be removed. Output is beeing logged to /var/log/clamav.log
