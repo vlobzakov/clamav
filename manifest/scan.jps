@@ -1,5 +1,5 @@
 type: update
-name: Anti-virus
+name: Scan
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
 version: 0.1
 logo: images/clamav-logo.png
