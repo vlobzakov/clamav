@@ -22,17 +22,17 @@ onUninstall:
   user: root
   sayYes: true
 
-buttons:
-  - confirmText: Do you want to run a Scan of the full Node?     WARNING This will remove everything detected even if False-Positive.
-    loadingText: Launching Scan in Background
-    action: scan
-    caption: Scan Now
-
 onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   cmd [${targetNodes.nodeGroup}]:
     - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
   user: root
   sayYes: true
+
+buttons:
+  - confirmText: Do you want to run a Scan of the full Node?     WARNING This will remove everything detected even if False-Positive.
+    loadingText: Launching Scan in Background
+    action: scan
+    caption: Scan Now
 
 actions:
   scan:
