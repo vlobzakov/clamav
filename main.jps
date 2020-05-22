@@ -1,5 +1,5 @@
 type: update
-version: 0.3
+version: 1.0
 name: Clamav Anti-virus
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic_Addon_AV-Scanner/master/
 description: 
