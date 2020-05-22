@@ -60,13 +60,14 @@ actions:
 
   update:
     - install:
+        type: update
         jps: manifest/update-db.jps
         onInstall:
           return: 
             type: success
             message: message from nested JPS'1
-      settings:
-        node: "${targetNodes.nodeGroup}"
+        settings:
+          node: "${targetNodes.nodeGroup}"
     - return:  
         type: info
         message: ${response.successText}
