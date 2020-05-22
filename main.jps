@@ -29,7 +29,7 @@ onUninstall:
 
 buttons:
   - confirmText: Do you want to run a Scan of the full Node?     WARNING This will remove everything detected even if False-Positive.
-    loadingText: Scanning...
+    loadingText: Launching Scan in Background
     action: scan
     caption: Scan Now
   - confirmText: Do you want to run a Update of the Clamav DB using freshclam?
@@ -69,5 +69,5 @@ actions:
         message: ${response.successText}
 
 return:
-  type: success
+  type: info
   message: Anti-Virus succesfully installed
