@@ -2,12 +2,14 @@
 
 detect=$(cat /etc/*-release | grep 'ID=')
 if [[ $detect == *"debian"* ]]; then
+  export DEBIAN_FRONTEND=noninteractive
 	apt-get update
-	apt-get install clamav
+	apt-get --assume-yes install clamav
 	sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
 elif [[ $detect == *"ubuntu"* ]]; then
+  export DEBIAN_FRONTEND=noninteractive
 	apt-get update
-	apt-get install clamav
+	apt-get --assume-yes install clamav
 	sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
 elif [[ $detect == *"centos"* ]]; then
     yum install -y epel-release 
