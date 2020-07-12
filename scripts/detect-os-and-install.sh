@@ -17,6 +17,7 @@ elif [[ $detect == *"centos"* ]]; then
     sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
 elif [[ $detect == *"alpine"* ]]; then
 	apk add clamav
+	apk add clamav-libunrar
 	sed -i -e "s/^Example/#Example/" /etc/clamav/freshclam.conf
 fi
 
