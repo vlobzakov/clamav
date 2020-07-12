@@ -31,7 +31,5 @@ fi
 
 mkdir /var/log/clamav
 touch /var/log/clamav/clamav.log
-chown clamav /var/log/clamav/clamav.log
-chgrp clamupdate /var/log/clamav/clamav.log
 chmod 0764 /var/log/clamav/clamav.log
 freshclam
