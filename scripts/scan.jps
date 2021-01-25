@@ -33,7 +33,7 @@ actions:
             ${settings.expert-command}
           user: root
           sayYes: true 
-              
+
     - elif (${settings.include-dirs} === true):
         - log: Only scan one folder enabled
         - cmd [${settings.node}]: |-
