@@ -31,6 +31,7 @@ settings:
               showIf:
                 true:
                   type: string
+                  name: include-dirs-path
                   value: /var/www/webroot
                   caption: Specify a folder to scan
             - type: checkbox
@@ -69,6 +70,12 @@ actions:
     - install: ${baseUrl}/scripts/scan.jps
       settings: 
         node: "${targetNodes.nodeGroup}"
+        expert: "${settings.expert}"
+        expert-command: "${settings.expert-command}"
+        include-dirs: "${settings.include-dirs}"
+        include-dirs-path: "${settings.include-dirs-path}"
+        disable-mounts: "${settings.disable-mounts}"
+
 
 return:
   type: info
