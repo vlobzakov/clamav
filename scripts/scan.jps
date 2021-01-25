@@ -21,7 +21,7 @@ actions:
   scan:
     - if (${settings.expert} === true):
         - log: Expert mode enabled, using custom scan command
-        - cmd [${targetNodes.nodeGroup}]: |-
+        - cmd [${settings.node}]: |-
             date=$(date)
             echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
@@ -34,7 +34,7 @@ actions:
     
     - elif (${settings.include-dirs} === true):
         - log: Only scan one folder enabled
-        - cmd [${targetNodes.nodeGroup}]: |-
+        - cmd [${settings.node}]: |-
             date=$(date)
             echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
@@ -47,7 +47,7 @@ actions:
   
     - elif (${settings.enable-mounts} === true):         
         - log: Default mode enabled, using default command with mounts enabled
-        - cmd [${targetNodes.nodeGroup}]: |-
+        - cmd [${settings.node}]: |-
             date=$(date)
             echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
@@ -60,7 +60,7 @@ actions:
 
     - else:         
         - log: Default mode enabled, using default command with mounts disabled
-        - cmd [${targetNodes.nodeGroup}]: |-
+        - cmd [${settings.node}]: |-
             date=$(date)
             echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
