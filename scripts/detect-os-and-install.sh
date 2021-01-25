@@ -34,3 +34,7 @@ mkdir /var/log/clamav
 touch /var/log/clamav/clamav.log
 chgrp clamupdate /var/log/clamav/clamav.log
 chmod 0764 /var/log/clamav/clamav.log
+
+mkdir /opt/clamav_quarantine
+chown 700:700 /opt/clamav_quarantine
+chmod 0764 /opt/clamav_quarantine
