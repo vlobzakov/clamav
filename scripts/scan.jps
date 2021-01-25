@@ -31,7 +31,9 @@ actions:
             echo "" >> /var/log/clamav/clamav.log
             freshclam
             ${settings.expert-command}
-    
+          user: root
+          sayYes: true 
+              
     - elif (${settings.include-dirs} === true):
         - log: Only scan one folder enabled
         - cmd [${settings.node}]: |-
@@ -43,7 +45,9 @@ actions:
             echo "Scan is now running..." >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
             freshclam
-            clamscan --infected --recursive -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined ${settings.include-dirs-path} > /dev/null 2>&1 &  
+            clamscan --infected --recursive -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined ${settings.include-dirs-path} > /dev/null 2>&1 &
+          user: root
+          sayYes: true 
   
     - elif (${settings.enable-mounts} === true):         
         - log: Default mode enabled, using default command with mounts enabled
@@ -57,6 +61,8 @@ actions:
             echo "" >> /var/log/clamav/clamav.log
             freshclam
             clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &
+          user: root
+          sayYes: true 
 
     - else:         
         - log: Default mode enabled, using default command with mounts disabled
@@ -70,6 +76,8 @@ actions:
             echo "" >> /var/log/clamav/clamav.log
             freshclam
             clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &
+          user: root
+          sayYes: true 
 
 return:
   type: success
