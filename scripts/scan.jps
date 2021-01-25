@@ -8,41 +8,6 @@ logo: images/clamav-logo.png
 onInstall:
   - temp
 
-settings:
-  main:
-    fields:
-      - type: checkbox
-        name: expert
-        value: false
-        caption: Enable expert mode to directly modify the Clamav command
-        showIf:
-          true:
-            type: string
-            name: expert-command
-            placeholder: clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &
-            required: true
-          false:
-            type: compositefield
-            hideLabel: true
-            pack: left
-            name: remotelogging
-            value: false
-            itemCls: deploy-manager-grid
-            cls: x-grid3-row-unselected
-            items: [{
-              type: "displayfield",
-              cls: "x-grid3-row-checker x-item-disabled",
-              margins: "0 0 0 -3",
-              width: 20,
-              height: 20
-            }, {
-              type: "displayfield",
-              cls: "x-item-disabled",
-              value: "Enable logging of executed shell commands as warnings",
-              margins: "0 0 0 10"
-            }]
-
-
 actions:
  temp:
 
