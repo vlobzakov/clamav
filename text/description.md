@@ -1,8 +1,7 @@
-This is a Clamav installer that will allow you to update the clamav database and launch scans for the full Node. 
-Simply select **Freshclam** in the Buttons once installed to update the recognition DB.
-And **Scan Now** to launch a full Scan of the Node.
+This is a Clamav installer that will allow you to update the clamav database and launch scans. 
+Simply select **Scan Now** on the Addon once to get the options for scanning.
 
 **Note:** 
-* The Scan will directly remove all infected Files. Even if False-Positive!
-* The Scan will severely load your node and it might be slow to respond during the scan.
-* There is **NO** automatic Scanning. Only when you utilise the **Scan Now** Button.
+* DO NO use expert mode if you are not sure on what you are doing!
+* The Scan will severely load your node and it might be slow to respond during the scan or even be unresponsive.
+* There is **NO** automatic Scanning. Only when you utilise the **Scan Now** Button is anything done.
