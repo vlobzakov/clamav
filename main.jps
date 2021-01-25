@@ -78,7 +78,6 @@ actions:
         include-dirs-path: "${settings.include-dirs-path}"
         enable-mounts: "${settings.enable-mounts}"
 
-
 return:
   type: info
   message: Anti-Virus succesfully installed
