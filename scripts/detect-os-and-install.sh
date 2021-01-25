@@ -38,3 +38,5 @@ chmod 0764 /var/log/clamav/clamav.log
 mkdir /opt/clamav_quarantine
 chown 700:700 /opt/clamav_quarantine
 chmod 0764 /opt/clamav_quarantine
+
+echo /opt/clamav_quarantine >> /etc/jelastic/redeploy.conf
