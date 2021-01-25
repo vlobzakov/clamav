@@ -37,7 +37,7 @@ settings:
                   caption: Specify a folder to scan. DO NOT use / on this option.
                 false:
                   type: checkbox
-                  name: disable-mounts
+                  name: enable-mounts
                   caption: Scan Mount Points
                   value: false
 
@@ -76,7 +76,7 @@ actions:
         expert-command: "${settings.expert-command}"
         include-dirs: "${settings.include-dirs}"
         include-dirs-path: "${settings.include-dirs-path}"
-        disable-mounts: "${settings.disable-mounts}"
+        enable-mounts: "${settings.enable-mounts}"
 
 
 return:
