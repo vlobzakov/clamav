@@ -29,19 +29,17 @@ onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   sayYes: true
 
 buttons:
-  - confirmText: Do you want to run a Scan of the full Node?     WARNING This will remove everything detected even if False-Positive.
-    loadingText: Launching Scan in Background
+  - confirmText: Do you want to run a Scan of the full Node?
     action: scan
+    loadingText: Starting scan...
     caption: Scan Now
 
 actions:
   scan:
-    cmd [${targetNodes.nodeGroup}]:
-      - curl -fsSL ${baseUrl}scripts/scan.sh | /bin/bash
-    user: root
-    return:
-      type: success
-      message: Node will be Scanned in the Background and if any infected Files are found they will be removed. Output is beeing logged to /var/log/clamav/clamav.log
+    - log: Start the Scan sub-addon
+    - install: ${baseUrl}/scripts/scan.jps
+      settings:
+        node: "${targetNodes.nodeGroup}"
 
 return:
   type: info
