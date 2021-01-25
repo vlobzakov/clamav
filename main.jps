@@ -34,7 +34,7 @@ settings:
                   type: string
                   name: include-dirs-path
                   value: /var/www/webroot
-                  caption: Specify a folder to scan
+                  caption: Specify a folder to scan. DO NOT use / on this option.
             - type: checkbox
               name: disable-mounts
               caption: Do not scan mounted networks
