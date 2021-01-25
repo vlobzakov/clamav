@@ -1,0 +1,33 @@
+type: update
+version: 0.1
+name: Scanning of Clamav
+baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic-Clamav/master
+logo: images/clamav-logo.png
+
+
+onInstall:
+  - temp
+
+settings:
+  main:
+    fields:
+
+
+actions:
+ temp:
+
+return:
+  type: success
+  message: Node will be Scanned in the Background and if any infected Files are found they will be quarantined by default. Output is beeing logged to /var/log/clamav/clamav.log
+
+
+
+# OLD SCAN ACTION FROM MAIN.JPS
+#actions:
+#  scan:
+#    cmd [${targetNodes.nodeGroup}]:
+#      - curl -fsSL ${baseUrl}scripts/scan.sh | /bin/bash
+#    user: root
+#    return:
+#      type: success
+#      message: Node will be Scanned in the Background and if any infected Files are found they will be removed. Output is beeing logged to /var/log/clamav/clamav.log
