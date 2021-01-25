@@ -12,11 +12,11 @@ onInstall:
 actions:
   prepare:
     - log: prepare the command to use and get necessary info like mount points
-    - if (${settings.disable-mounts} === true):
+    - if (${settings.enable-mounts} === true):
         api[${targetNodes.nodeGroup}]:
           - method: environment.file.getmountpoints
             params:
-
+# TO DO MOUNT POINT MODIFICATIONS
 
   scan:
     - if (${settings.expert} === true):
@@ -32,8 +32,8 @@ actions:
             freshclam
             ${settings.expert-command}
     
-    - elif :
-        - log: Only scan one folder enabled, and mounts enabled
+    - elif (${settings.include-dirs} === true):
+        - log: Only scan one folder enabled
         - cmd [${targetNodes.nodeGroup}]: |-
             date=$(date)
             echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
@@ -43,23 +43,10 @@ actions:
             echo "Scan is now running..." >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
             freshclam
-            clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &  
-
-    - elif :
-        - log: Only scan one folder enabled, and mounts disabled
-        - cmd [${targetNodes.nodeGroup}]: |-
-            date=$(date)
-            echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
-            echo "" >> /var/log/clamav/clamav.log
-            echo "This following Scan has been started at" $date >> /var/log/clamav/clamav.log
-            echo "" >> /var/log/clamav/clamav.log
-            echo "Scan is now running..." >> /var/log/clamav/clamav.log
-            echo "" >> /var/log/clamav/clamav.log
-            freshclam
-            clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 & 
-    
-    - elif :         
-        - log: Default mode enabled, using default command with mounts disabled
+            clamscan --infected --recursive -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined ${settings.include-dirs-path} > /dev/null 2>&1 &  
+  
+    - elif (${settings.enable-mounts} === true):         
+        - log: Default mode enabled, using default command with mounts enabled
         - cmd [${targetNodes.nodeGroup}]: |-
             date=$(date)
             echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
@@ -72,7 +59,7 @@ actions:
             clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &
 
     - else:         
-        - log: Default mode enabled, using default command with mounts enabled
+        - log: Default mode enabled, using default command with mounts disabled
         - cmd [${targetNodes.nodeGroup}]: |-
             date=$(date)
             echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
