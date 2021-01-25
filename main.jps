@@ -38,8 +38,8 @@ settings:
                 false:
                   type: checkbox
                   name: disable-mounts
-                  caption: Do not scan mounted networks
-                  value: true
+                  caption: Scan Mount Points
+                  value: false
 
 onInstall:
   cmd [${targetNodes.nodeGroup}]:
