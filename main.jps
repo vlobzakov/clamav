@@ -12,19 +12,19 @@ targetNodes:
      
 onInstall:
   cmd [${targetNodes.nodeGroup}]:
-    - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
+    - curl -fsSL ${baseUrl}/scripts/detect-os-and-install.sh | /bin/bash
   user: root
   sayYes: true
 
 onUninstall:
   cmd [${targetNodes.nodeGroup}]:
-    - curl -fsSL ${baseUrl}scripts/detect-os-and-uninstall.sh | /bin/bash
+    - curl -fsSL ${baseUrl}/scripts/detect-os-and-uninstall.sh | /bin/bash
   user: root
   sayYes: true
 
 onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   cmd [${targetNodes.nodeGroup}]:
-    - curl -fsSL ${baseUrl}scripts/detect-os-and-install.sh | /bin/bash
+    - curl -fsSL ${baseUrl}/scripts/detect-os-and-install.sh | /bin/bash
   user: root
   sayYes: true
 
