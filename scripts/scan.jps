@@ -6,10 +6,40 @@ logo: images/clamav-logo.png
 
 
 onInstall:
-  - temp
+  - prepare
+  - scan
 
 actions:
- temp:
+  prepare:
+    - log: prepare the command to use and get necessary info like mount points
+    - if (${settings.disable-mounts} === true):
+        api[${targetNodes.nodeGroup}]:
+          - method: environment.file.getmountpoints
+            params:
+
+
+  scan:
+    - if (${settings.expert} === true):
+        - log: Expert mode enabled, using custom scan command
+        - cmd [${targetNodes.nodeGroup}]: |-
+            date=$(date)
+            echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
+            echo "" >> /var/log/clamav/clamav.log
+            echo "This following Scan has been started at" $date >> /var/log/clamav/clamav.log
+            echo "" >> /var/log/clamav/clamav.log
+            freshclam
+            ${settings.expert-command}
+    
+    - elif :
+        - log: Only scan one folder enabled, using default command with only one scan target
+        - cmd [${targetNodes.nodeGroup}]: |-
+            date=$(date)
+            echo "-------------------------------------------------------------------------------" >> /var/log/clamav/clamav.log
+            echo "" >> /var/log/clamav/clamav.log
+            echo "This following Scan has been started at" $date >> /var/log/clamav/clamav.log
+            echo "" >> /var/log/clamav/clamav.log
+            freshclam
+            clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &           
 
 return:
   type: success
