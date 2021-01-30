@@ -30,7 +30,7 @@ actions:
             echo "Scan is now running..." >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
             freshclam
-            ${settings.expert-command}
+            chmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -mchmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -m ${settings.expert-command}
           user: root
           sayYes: true 
 
@@ -45,7 +45,7 @@ actions:
             echo "Scan is now running..." >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
             freshclam
-            clamscan --infected --recursive -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined ${settings.include-dirs-path} > /dev/null 2>&1 &
+            chmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -mchmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -m clamscan --infected --recursive -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined ${settings.include-dirs-path} > /dev/null 2>&1
           user: root
           sayYes: true 
   
@@ -60,7 +60,7 @@ actions:
             echo "Scan is now running..." >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
             freshclam
-            clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &
+            chmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -mchmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -m clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1
           user: root
           sayYes: true 
 
@@ -75,7 +75,7 @@ actions:
             echo "Scan is now running..." >> /var/log/clamav/clamav.log
             echo "" >> /var/log/clamav/clamav.log
             freshclam
-            clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1 &
+            chmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -mchmod 755 /var/run/screen;/usr/bin/pkill screen;screen -wipe;screen -d -m clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log  --move=/opt/clamav_quarantined / > /dev/null 2>&1
           user: root
           sayYes: true 
 
