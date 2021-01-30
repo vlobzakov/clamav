@@ -35,8 +35,8 @@ touch /var/log/clamav/clamav.log
 chgrp clamupdate /var/log/clamav/clamav.log
 chmod 0764 /var/log/clamav/clamav.log
 
-mkdir /opt/clamav_quarantine
-chown 700:700 /opt/clamav_quarantine
-chmod 0764 /opt/clamav_quarantine
+mkdir /opt/clamav_quarantined
+chown 700:700 /opt/clamav_quarantined
+chmod 0764 /opt/clamav_quarantined
 
-echo /opt/clamav_quarantine >> /etc/jelastic/redeploy.conf
+echo /opt/clamav_quarantined >> /etc/jelastic/redeploy.conf
