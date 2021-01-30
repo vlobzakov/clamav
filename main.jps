@@ -35,11 +35,11 @@ settings:
                   name: include-dirs-path
                   value: /var/www/webroot
                   caption: Specify a folder to scan. DO NOT use / on this option.
-                false:
-                  type: checkbox
-                  name: enable-mounts
-                  caption: Scan Mount Points
-                  value: false
+                #false:
+                #  type: checkbox
+                #  name: enable-mounts
+                #  caption: Scan Mount Points
+                #  value: false
 
 onInstall:
   cmd [${targetNodes.nodeGroup}]:
