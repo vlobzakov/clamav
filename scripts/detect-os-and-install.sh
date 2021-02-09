@@ -30,13 +30,26 @@ else
 	sed -i -e 's@^#LogFileMaxSize 2M@LogFileMaxSize 0@' /etc/freshclam.conf
 fi
 
-mkdir -p /var/log/clamav
-touch /var/log/clamav/clamav.log
-chgrp clamupdate /var/log/clamav/clamav.log
-chmod 0764 /var/log/clamav/clamav.log
+#add correct folders and set rights for quarantine and log
+if [[ $detect == *"alpine"* ]]; then
+	mkdir -p /var/log/clamav
+	touch /var/log/clamav/clamav.log
+	chgrp clamav /var/log/clamav/clamav.log
+	chmod 0764 /var/log/clamav/clamav.log
+	
+	mkdir -p /opt/clamav_quarantined
+	chown 700:700 /opt/clamav_quarantined
+	chmod 0764 /opt/clamav_quarantined
+else
+	mkdir -p /var/log/clamav
+	touch /var/log/clamav/clamav.log
+	chgrp clamupdate /var/log/clamav/clamav.log
+	chmod 0764 /var/log/clamav/clamav.log
 
-mkdir -p /opt/clamav_quarantined
-chown 700:700 /opt/clamav_quarantined
-chmod 0764 /opt/clamav_quarantined
+	mkdir -p /opt/clamav_quarantined
+	chown 700:700 /opt/clamav_quarantined
+	chmod 0764 /opt/clamav_quarantined
 
-echo /opt/clamav_quarantined >> /etc/jelastic/redeploy.conf
+	echo /opt/clamav_quarantined >> /etc/jelastic/redeploy.conf
+fi
+
