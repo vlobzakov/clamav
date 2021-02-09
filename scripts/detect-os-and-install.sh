@@ -12,9 +12,9 @@ elif [[ $detect == *"ubuntu"* ]]; then
 	apt-get --assume-yes install clamav
 	sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
 elif [[ $detect == *"centos"* ]]; then
-    yum install -y epel-release 
-    yum install -y clamav 
-    sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
+   	yum install -y epel-release 
+    	yum install -y clamav 
+    	sed -i -e "s/^Example/#Example/" /etc/freshclam.conf
 elif [[ $detect == *"alpine"* ]]; then
 	apk add clamav
 	apk add clamav-libunrar
@@ -30,12 +30,12 @@ else
 	sed -i -e 's@^#LogFileMaxSize 2M@LogFileMaxSize 0@' /etc/freshclam.conf
 fi
 
-mkdir /var/log/clamav
+mkdir -p /var/log/clamav
 touch /var/log/clamav/clamav.log
 chgrp clamupdate /var/log/clamav/clamav.log
 chmod 0764 /var/log/clamav/clamav.log
 
-mkdir /opt/clamav_quarantined
+mkdir -p /opt/clamav_quarantined
 chown 700:700 /opt/clamav_quarantined
 chmod 0764 /opt/clamav_quarantined
 
