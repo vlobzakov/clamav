@@ -6,20 +6,20 @@ This addon works by having a buttons on the interface once it's installed.
 
 ![Interface](images/interface.png?raw=true)
 
-If you click the Button it will update the Clamav DB using freshclam and launch a full scan afterwards.
+If you click the Button it will update the Clamav DB using freshclam and offer different scanning options.
 
 There is **NO** repeated automatic scanning!
 
 The node will only be scanned once you click on scan now and the addon does nothing until then.
 
-The scan command is  
+The default scan command is  
 ```
-clamscan --infected --recursive --remove --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log / > /dev/null 2>&1 &
+clamscan --infected --recursive --exclude-dir="^/sys" --exclude-dir="^/dev" --exclude-dir="^/proc" -l /var/log/clamav/clamav.log --move=/opt/clamav_quarantined / > /dev/null 2>&1
 ```
 
-It will remove all infected Files even if it is a false positive.
+It will quarantine all files into the directory /opt/clamav_quarantined.
 
-The Node will be severely loaded during the Scan!
+The Node will be severely loaded during the Scan and requires 12 reserved Cloudlets to have enough RAM available for Clamav!
 
 Log Entries are saved into the file /var/log/clamav/clamav.log
 
