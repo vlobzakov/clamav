@@ -5,7 +5,7 @@ id: clamav-antivirus-addon
 baseUrl: https://raw.githubusercontent.com/panslothda/Jelastic-Clamav/master
 description: 
   text: /text/description.md
-  short: Virus Scan protection with Clamav, NO Automatic Scanning!  
+  short: Ensure antivirus protection for your Linux server  
 logo: images/clamav-logo.png
 
 targetNodes:
